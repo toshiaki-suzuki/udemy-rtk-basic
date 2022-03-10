@@ -34,7 +34,7 @@ export const taskSlice = createSlice({
       };
       state.tasks = [newItem, ...state.tasks];
     },
-    completetask: (state, action) => {
+    completeTask: (state, action) => {
       const task = state.tasks.find((t) => t.id === action.payload.id);
       if (task) {
         task.completed = true;
@@ -47,7 +47,7 @@ export const taskSlice = createSlice({
   },
 });
 
-export const { newTask, completetask, deleteTask } = taskSlice.actions;
+export const { newTask, completeTask, deleteTask } = taskSlice.actions;
 
 
 export const selectTasks = (state) => state.task.tasks;
